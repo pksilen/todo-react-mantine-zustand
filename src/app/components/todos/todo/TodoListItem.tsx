@@ -4,7 +4,7 @@ import { ListItemIcon } from 'app/common/components/list/ListItemIcon';
 import { ListItemText } from 'app/common/components/list/ListItemText';
 import { Todo } from 'app/stores/todos/Todo';
 import { useTodosStore } from 'app/stores/todos/todosStore';
-import { TodoIcon } from '../../../common/components/icons/Icons';
+import { TodoDoneIcon, TodoUndoneIcon } from '../../../common/components/icons/Icons';
 import classes from './TodoListItem.module.scss';
 import { EditTodoButton } from './buttons/EditTodoButton';
 import { RemoveTodoButton } from './buttons/RemoveTodoButton';
@@ -26,7 +26,7 @@ export const TodoListItem = ({ todo: { id, title, isDone } }: Props) => {
 
   return (
     <ListItem className={classes.todo}>
-      <ListItemIcon icon={<TodoIcon color={isDone ? 'success' : 'error'} />} />
+      <ListItemIcon icon={isDone ? <TodoDoneIcon /> : <TodoUndoneIcon />} />
       {isEditableTodo ? (
         <TodoTitleInput id={id} title={title} />
       ) : (

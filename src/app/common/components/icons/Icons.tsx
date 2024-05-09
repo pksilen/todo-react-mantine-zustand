@@ -1,6 +1,7 @@
 import {
   IconCheck,
   IconCircleDashed,
+  IconCircleDashedCheck,
   IconList,
   IconMoon,
   IconPencil,
@@ -16,4 +17,5 @@ export const LightModeIcon = IconSun;
 export const EditIcon = IconPencil;
 export const RemoveIcon = IconTrash;
 export const CheckIcon = IconCheck;
-export const TodoIcon = IconCircleDashed;
+export const TodoUndoneIcon = () => <IconCircleDashed style={{ color: 'red' }} />;
+export const TodoDoneIcon = () => <IconCircleDashedCheck style={{ color: 'green' }} />;

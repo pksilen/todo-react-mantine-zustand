@@ -1,4 +1,3 @@
-import { ListItem as MantineListItem } from '@mantine/core';
 import React from 'react';
 
 type Props = {
@@ -7,5 +6,5 @@ type Props = {
 };
 
 export const ListItem = ({ children, className }: Props) => (
-  <MantineListItem className={className}>{children}</MantineListItem>
+  <li className={className}>{children}</li>
 );

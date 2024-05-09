@@ -5,5 +5,7 @@ type Props = {
 };
 
 export const ListItemText = ({ className, onDoubleClick, text }: Props) => (
-  <span className={className} onDoubleClick={onDoubleClick} />
+  <div className={className} onDoubleClick={onDoubleClick}>
+    {text}
+  </div>
 );
