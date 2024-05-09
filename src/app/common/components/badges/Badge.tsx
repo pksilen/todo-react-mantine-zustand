@@ -1,5 +1,6 @@
 import { Badge as MantineBadge } from '@mantine/core';
 import React from 'react';
+import classes from './Badge.module.scss';
 
 type Props = {
   readonly children: React.ReactNode;
@@ -8,5 +9,10 @@ type Props = {
 };
 
 export const Badge = ({ children, color, content }: Props) => (
-  <MantineBadge color="red">{children}</MantineBadge>
+  <>
+    {children}
+    <MantineBadge className={classes.badge} color="red">
+      {content}
+    </MantineBadge>
+  </>
 );

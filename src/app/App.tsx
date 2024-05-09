@@ -1,4 +1,5 @@
 import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
 import { AddTodo } from 'app/components/addtodo/AddTodo';
 import { Controls } from 'app/components/controls/Controls';
 import { ErrorBoundary } from 'app/components/errorboundary/ErrorBoundary';
