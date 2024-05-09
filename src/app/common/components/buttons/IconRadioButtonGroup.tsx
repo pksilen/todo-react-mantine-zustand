@@ -2,7 +2,8 @@ import { SegmentedControl } from '@mantine/core';
 import React, { useState } from 'react';
 
 export type IconRadioButtonProps<T extends string> = {
-  readonly icon: React.ReactNode;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  readonly Icon: React.FC<any>;
   readonly onClick: () => void;
   readonly value: T;
 };
@@ -18,8 +19,8 @@ export const IconRadioButtonGroup = <T extends string>({
 }: IconRadioButtonGroupProps<T>) => {
   const [selectedValue, setSelectedValue] = useState(initialValue);
 
-  const data = buttons.map(({ icon, onClick, value }: IconRadioButtonProps<T>) => ({
-    label: icon,
+  const data = buttons.map(({ Icon, onClick, value }: IconRadioButtonProps<T>) => ({
+    label: <Icon onClick={onClick} />,
     value
   }));
 

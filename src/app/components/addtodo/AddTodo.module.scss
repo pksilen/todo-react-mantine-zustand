@@ -1,9 +1,13 @@
 .addTodo {
+  align-items: end;
   display: flex;
-  justify-content: center;
   margin-block-start: 40px;
 
-  .button {
+  .titleInput {
+    flex-grow: 1;
+  }
+
+  .addButton {
     flex-shrink: 0;
     margin-inline-start: 25px;
   }

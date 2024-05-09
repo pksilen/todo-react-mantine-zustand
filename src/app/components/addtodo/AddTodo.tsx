@@ -9,11 +9,12 @@ export const AddTodo = () => {
   return (
     <section className={classes.addTodo}>
       <TextInput
+        className={classes.titleInput}
         label="Add new todo..."
         onChange={(event) => setTodoTitle(event.target.value)}
         value={todoTitle}
       />
-      <Button className={classes.button} onClick={maybeAddTodo}>
+      <Button className={classes.addButton} onClick={maybeAddTodo}>
         Add todo
       </Button>
     </section>

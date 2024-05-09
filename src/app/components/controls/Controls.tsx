@@ -1,3 +1,4 @@
+import { useMantineColorScheme } from '@mantine/core';
 import {
   IconRadioButtonGroup,
   IconRadioButtonProps
@@ -17,26 +18,24 @@ type ViewMode = 'dark' | 'light';
 
 export const Controls = () => {
   const { toggleShouldShowUndoneTodosOnly } = useTodosStore((store) => store.actions);
-
-  const { activateDarkMode, activateLightMode, showTodosList, showTodosTable } = useControlsStore(
-    (store) => store.actions
-  );
+  const { showTodosList, showTodosTable } = useControlsStore((store) => store.actions);
+  const { setColorScheme } = useMantineColorScheme();
 
   const viewTypeButtons: IconRadioButtonProps<ViewType>[] = [
-    { icon: <ListIcon />, onClick: showTodosList, value: 'list' },
-    { icon: <TableIcon />, onClick: showTodosTable, value: 'table' }
+    { Icon: ListIcon, onClick: showTodosList, value: 'list' },
+    { Icon: TableIcon, onClick: showTodosTable, value: 'table' }
   ];
 
   const viewModeButtons: IconRadioButtonProps<ViewMode>[] = [
-    { icon: <DarkModeIcon />, onClick: activateLightMode, value: 'light' },
-    { icon: <LightModeIcon />, onClick: activateDarkMode, value: 'dark' }
+    { Icon: LightModeIcon, onClick: () => setColorScheme('light'), value: 'light' },
+    { Icon: DarkModeIcon, onClick: () => setColorScheme('dark'), value: 'dark' }
   ];
 
   return (
     <section className={classes.controls}>
       <IconRadioButtonGroup buttons={viewTypeButtons} initialValue="list" />
       <Switch label="Show undone only" onClick={toggleShouldShowUndoneTodosOnly} />
-      <IconRadioButtonGroup buttons={viewModeButtons} initialValue="dark" />
+      <IconRadioButtonGroup buttons={viewModeButtons} initialValue="light" />
     </section>
   );
 };
