@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const IconButton = ({ className, icon, onClick }: Props) => (
-  <ActionIcon className={className} onClick={onClick}>
+  <ActionIcon className={className} onClick={onClick} variant="outline">
     {icon}
   </ActionIcon>
 );

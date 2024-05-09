@@ -38,7 +38,11 @@ export const TodoTableRow = ({ todo: { id, title, isDone } }: Props) => {
       )}
       <TableCell className={classes.buttons}>
         <IconButton icon={<EditIcon />} onClick={() => setEditableTodo(id)} />
-        <IconButton icon={<RemoveIcon />} onClick={() => removeTodo(id)} />
+        <IconButton
+          className={classes.button}
+          icon={<RemoveIcon />}
+          onClick={() => removeTodo(id)}
+        />
       </TableCell>
     </TableRow>
   );
