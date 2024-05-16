@@ -1,18 +1,18 @@
-import { useMantineColorScheme } from '@mantine/core';
 import {
   IconRadioButtonGroup,
   IconRadioButtonProps
 } from 'app/common/components/buttons/IconRadioButtonGroup';
-import { Switch } from 'app/common/components/switches/Switch';
-import { ViewType, useControlsStore } from 'app/stores/controls/controlsStore';
-import { useTodosStore } from 'app/stores/todos/todosStore';
 import {
   DarkModeIcon,
   LightModeIcon,
   ListIcon,
   TableIcon
-} from '../../common/components/icons/Icons';
+} from 'app/common/components/icons/Icons';
+import { Switch } from 'app/common/components/switches/Switch';
+import { ViewType, useControlsStore } from 'app/stores/controls/controlsStore';
+import { useTodosStore } from 'app/stores/todos/todosStore';
 import classes from './Controls.module.scss';
+import { useMantineColorScheme } from '@mantine/core';
 
 type ViewMode = 'dark' | 'light';
 
