@@ -1,4 +1,4 @@
-import { SegmentedControl } from '@mantine/core';
+import { SegmentedControl, VisuallyHidden } from '@mantine/core';
 import React, { useState } from 'react';
 
 export type IconRadioButtonProps<T extends string> = {
@@ -20,7 +20,12 @@ export const IconRadioButtonGroup = <T extends string>({
   const [selectedValue, setSelectedValue] = useState(initialValue);
 
   const data = buttons.map(({ Icon, onClick, value }: IconRadioButtonProps<T>) => ({
-    label: <Icon onClick={onClick} />,
+    label: (
+      <div onClick={onClick}>
+        <Icon />
+        <VisuallyHidden>{value}</VisuallyHidden>
+      </div>
+    ),
     value
   }));
 

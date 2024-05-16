@@ -6,6 +6,6 @@ type Props = {
   readonly onChange: () => void;
 };
 
-export const Checkbox = ({ color, isChecked, onChange }: Props) => (
-  <MantineCheckbox checked={isChecked} onChange={onChange} />
+export const Checkbox = ({ color, isChecked, onChange, ...restOfProps }: Props) => (
+  <MantineCheckbox checked={isChecked} onChange={onChange} {...restOfProps} />
 );

@@ -22,7 +22,7 @@ export default class TodoAppPage {
 
   constructor(private readonly page: Page) {
     this.page = page;
-    this.heading = page.getByRole('status').getByRole('heading', { name: /Todos/i });
+    this.heading = page.getByRole('heading', { name: 'Todos', exact: true });
     this.undoneTodoCountBadge = page.getByTitle(/Undone todo count/i);
     this.todoFilterInput = page.getByPlaceholder(/Search todos/i);
     this.todoTitleInput = page.getByLabel(/Add new todo.../i);
@@ -33,11 +33,11 @@ export default class TodoAppPage {
     this.markTodoDoneButton = page.getByRole('button', { name: /Mark done/i });
     this.markTodoUndoneButton = page.getByRole('button', { name: /Mark undone/i });
     this.showUndoneTodosOnlyToggle = page.getByLabel(/Show undone only/i);
-    this.listViewToggleButton = page.getByRole('button', { name: /list/i });
-    this.tableViewToggleButton = page.getByRole('button', { name: /table/i });
+    this.listViewToggleButton = page.getByRole('radio', { name: /list/i });
+    this.tableViewToggleButton = page.getByRole('radio', { name: /table/i });
     this.todoCheckbox = page.getByRole('checkbox', { name: /Dummy todo/i });
-    this.darkModeToggleButton = page.getByRole('button', { name: /dark/i });
-    this.lightModeToggleButton = page.getByRole('button', { name: /light/i });
+    this.darkModeToggleButton = page.getByRole('radio', { name: /dark/i });
+    this.lightModeToggleButton = page.getByRole('radio', { name: /light/i });
     this.addTodoButton = page.getByRole('button', { name: /Add todo/i });
   }
 

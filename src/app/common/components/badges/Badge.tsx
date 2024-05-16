@@ -12,7 +12,7 @@ export const Badge = ({ children, color, content }: Props) => (
   <>
     {children}
     <MantineBadge className={classes.badge} color="red">
-      {content}
+      <span title="Undone todo count">{content}</span>
     </MantineBadge>
   </>
 );
