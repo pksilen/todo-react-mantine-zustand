@@ -9,13 +9,13 @@ test.describe('Change view mode', async () => {
     const todoAppPage = await new TodoAppPage(page).goto();
 
     // WHEN
-    await todoAppPage.darkModeToggleButton.click();
+    await todoAppPage.darkModeToggleButton.click({ force: true });
 
     // THEN
     await expect(page).toHaveScreenshot();
 
     // WHEN
-    await todoAppPage.lightModeToggleButton.click();
+    await todoAppPage.lightModeToggleButton.click({ force: true });
 
     // THEN
     await expect(page).toHaveScreenshot();

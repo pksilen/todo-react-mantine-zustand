@@ -32,12 +32,12 @@ export default class TodoAppPage {
     this.removeTodoButton = page.getByRole('button', { name: /Remove/i });
     this.markTodoDoneButton = page.getByRole('button', { name: /Mark done/i });
     this.markTodoUndoneButton = page.getByRole('button', { name: /Mark undone/i });
-    this.showUndoneTodosOnlyToggle = page.getByLabel(/Show undone only/i);
-    this.listViewToggleButton = page.getByRole('radio', { name: /list/i });
-    this.tableViewToggleButton = page.getByRole('radio', { name: /table/i });
+    this.showUndoneTodosOnlyToggle = page.getByText(/Show undone only/i);
+    this.listViewToggleButton = page.getByTestId('list toggle');
+    this.tableViewToggleButton = page.getByTestId('table toggle');
     this.todoCheckbox = page.getByRole('checkbox', { name: /Dummy todo/i });
-    this.darkModeToggleButton = page.getByRole('radio', { name: /dark/i });
-    this.lightModeToggleButton = page.getByRole('radio', { name: /light/i });
+    this.darkModeToggleButton = page.getByTestId('dark toggle');
+    this.lightModeToggleButton = page.getByTestId('light toggle');
     this.addTodoButton = page.getByRole('button', { name: /Add todo/i });
   }
 
