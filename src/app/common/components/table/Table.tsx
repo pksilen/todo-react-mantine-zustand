@@ -1,9 +1,9 @@
 import { Table as MantineTable } from '@mantine/core';
 import React from 'react';
 
-type Props = {
+type Props = Readonly<{
   children?: React.ReactNode;
-};
+}>;
 
 export const Table = ({ children }: Props) => (
   <MantineTable>

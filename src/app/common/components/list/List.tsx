@@ -1,7 +1,7 @@
 import React from 'react';
 
-type Props = {
+type Props = Readonly<{
   children?: React.ReactNode;
-};
+}>;
 
 export const List = ({ children }: Props) => <ul>{children}</ul>;

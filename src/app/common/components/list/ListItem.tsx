@@ -1,9 +1,9 @@
 import React from 'react';
 
-type Props = {
-  readonly children: React.ReactNode;
-  readonly className?: string;
-};
+type Props = Readonly<{
+  children: React.ReactNode;
+  className?: string;
+}>;
 
 export const ListItem = ({ children, className }: Props) => (
   <li className={className}>{children}</li>
