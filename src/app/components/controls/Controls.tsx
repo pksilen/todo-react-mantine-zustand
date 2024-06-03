@@ -18,12 +18,12 @@ type ViewMode = 'dark' | 'light';
 
 export const Controls = () => {
   const { toggleShouldShowUndoneTodosOnly } = useTodosStore((store) => store.actions);
-  const { showTodosList, showTodosTable } = useControlsStore((store) => store.actions);
+  const { setViewType } = useControlsStore((store) => store.actions);
   const { setColorScheme } = useMantineColorScheme();
 
   const viewTypeButtons: IconRadioButtonProps<ViewType>[] = [
-    { Icon: ListIcon, onClick: showTodosList, value: 'list' },
-    { Icon: TableIcon, onClick: showTodosTable, value: 'table' }
+    { Icon: ListIcon, onClick: () => setViewType('list'), value: 'list' },
+    { Icon: TableIcon, onClick: () => setViewType('table'), value: 'table' }
   ];
 
   const viewModeButtons: IconRadioButtonProps<ViewMode>[] = [

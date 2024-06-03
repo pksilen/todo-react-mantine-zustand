@@ -7,8 +7,7 @@ interface State {
 }
 
 interface Actions {
-  showTodosList: () => void;
-  showTodosTable: () => void;
+  setViewType: (viewType: ViewType) => void;
 }
 
 type ControlsStore = State & { actions: Actions };
@@ -17,7 +16,6 @@ export const useControlsStore = create<ControlsStore>()((setState) => ({
   viewType: 'list',
 
   actions: {
-    showTodosList: () => setState(() => ({ viewType: 'list' })),
-    showTodosTable: () => setState(() => ({ viewType: 'table' }))
+    setViewType: (viewType: ViewType) => setState(() => ({ viewType }))
   }
 }));
