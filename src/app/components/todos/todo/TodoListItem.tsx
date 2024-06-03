@@ -20,7 +20,7 @@ type Props = {
 };
 
 export const TodoListItem = ({ todo: { id, title, isDone } }: Props) => {
-  const { edit, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
+  const { changeTitle, isEditable, remove, setAsEditable, toggleDone } = useTodo(id);
   const titleClasses = classNames(classes.title, isDone && classes.isDone);
   const icon = isDone ? <TodoDoneIcon /> : <TodoUndoneIcon />;
 
@@ -28,7 +28,7 @@ export const TodoListItem = ({ todo: { id, title, isDone } }: Props) => {
     <ListItem className={classes.todo}>
       <ListItemIcon icon={icon} />
       {isEditable ? (
-        <EditTextInput aria-label="Edit todo" onEditComplete={edit} text={title} />
+        <EditTextInput aria-label="Edit todo" onEditComplete={changeTitle} text={title} />
       ) : (
         <ListItemText className={titleClasses} onDoubleClick={setAsEditable} text={title} />
       )}
